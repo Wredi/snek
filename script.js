@@ -58,7 +58,7 @@ let snek = {
         return false;
     }
 };
-var old = null;
+let old = null;
 
 function getRand(min, max){
     return Math.floor(Math.random() * (max - min) + min);
@@ -82,7 +82,7 @@ let fps = 0;
 			break;
 	}
 	
-    var ctx;
+    let ctx;
     if(canvas.getContext('2d')){
         ctx = canvas.getContext('2d');
     }else{
