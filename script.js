@@ -68,7 +68,7 @@ let currKey = null;
 let fps = 0;
 (function main()
 {
-	let choice = Number(prompt("Wybierz poziom trudnosci (easy - 1, normal - 2, hard - 3): "));
+	let choice = Number(prompt("Select difficulty level (easy - 1, normal - 2, hard - 3): "));
 	switch(choice){
 		case 1:
 			fps = 10;
@@ -87,7 +87,7 @@ let fps = 0;
         ctx = canvas.getContext('2d');
     }else{
         ctx = null;
-        alert("Rzygi nie ma");
+        alert("Can't initialize canvas context");
     }
 
     document.addEventListener('keydown', (e) => {
@@ -123,7 +123,7 @@ function graphics(ctx, isColliding)
     ctx.fillRect(snek.head.x, snek.head.y, snek.cell_width, snek.cell_height);
     to_draw.forEach(i => ctx.fillRect(i.x, i.y, snek.cell_width, snek.cell_height));
 
-    document.getElementById("points").innerHTML = isColliding ? "Przegrales!!!" : snek.points;
+    document.getElementById("points").innerHTML = isColliding ? "You Lost!" : snek.points;
 }
 
 function controls()
