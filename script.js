@@ -128,12 +128,17 @@ function graphics(ctx, isColliding)
 
 function controls()
 {
+	let dir = {x: 0, y: 0};
     switch(currKey){
-        case 'ArrowUp': snek.head.setDir(0, -1); break;
-        case 'ArrowDown': snek.head.setDir(0, 1); break;
-        case 'ArrowRight': snek.head.setDir(1, 0); break;
-        case 'ArrowLeft': snek.head.setDir(-1, 0); break;
+        case 'ArrowUp': dir = {x: 0, y: -1}; break;
+        case 'ArrowDown': dir = {x: 0, y: 1}; break;
+        case 'ArrowRight': dir = {x: 1, y: 0}; break;
+        case 'ArrowLeft': dir = {x: -1, y: 0}; break;
     }
+	if(!(snek.head.dir.x == -dir.x) || !(snek.head.dir.y == -dir.y)){
+		snek.head.setDir(dir.x, dir.y);
+	}
+	
     if(snek.is_eating()){
         snek.cells.push(new Cell(0, 0));
     }
