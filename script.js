@@ -130,10 +130,10 @@ function controls()
 {
 	let dir = {x: 0, y: 0};
     switch(currKey){
-        case 'ArrowUp': dir = {x: 0, y: -1}; break;
-        case 'ArrowDown': dir = {x: 0, y: 1}; break;
-        case 'ArrowRight': dir = {x: 1, y: 0}; break;
-        case 'ArrowLeft': dir = {x: -1, y: 0}; break;
+        case 'ArrowUp': case 'w': dir = {x: 0, y: -1}; break;
+        case 'ArrowDown': case 's': dir = {x: 0, y: 1}; break;
+        case 'ArrowRight': case 'd': dir = {x: 1, y: 0}; break;
+        case 'ArrowLeft': case 'a': dir = {x: -1, y: 0}; break;
     }
 	if(!(snek.head.dir.x == -dir.x) || !(snek.head.dir.y == -dir.y)){
 		snek.head.setDir(dir.x, dir.y);
